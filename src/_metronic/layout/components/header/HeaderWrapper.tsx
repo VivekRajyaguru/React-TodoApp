@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
-import {toAbsoluteUrl} from '../../../helpers'
+import { toAbsoluteUrl} from '../../../helpers'
 import {useLayout} from '../../core'
 import {Header} from './Header'
 import {Topbar} from './Topbar'
 
-export function HeaderWrapper({setSearchBar}) {
+export function HeaderWrapper() {
   const {config, classes, attributes} = useLayout()
   const {header} = config
 
@@ -22,15 +22,19 @@ export function HeaderWrapper({setSearchBar}) {
           classes.headerContainer.join(' '),
           'd-flex align-items-stretch justify-content-between'
         )}
-      >
+      > 
         {/* begin::Mobile logo */}
         <div className='d-flex align-items-center flex-grow-1 flex-lg-grow-0'>
           <Link to='/dashboard' className='d-lg-none'>
-            <img alt='Logo' src={toAbsoluteUrl('/media/logos/logo-main.svg')} className='h-30px' />
+            <img
+              alt='Logo'
+              src={toAbsoluteUrl('/media/logos/logo-main.svg')}
+              className='h-30px'
+            />
           </Link>
         </div>
         {/* end::Mobile logo */}
-
+        
         {/* begin::Wrapper */}
         <div
           className={clsx(
@@ -45,7 +49,7 @@ export function HeaderWrapper({setSearchBar}) {
             </div>
           )}
 
-          <Topbar setSearchBar={setSearchBar} />
+          <Topbar />
         </div>
         {/* end::Wrapper */}
       </div>
