@@ -1,0 +1,174 @@
+//
+// Theme style
+//
+
+// Initialize
+@import 'init';
+
+// Components
+@import './core/components/components';
+@import 'components/components';
+
+// Layout
+@import 'layout/layout';
+
+* :not(.fas , .fa){
+  font-family: Inter, Helvetica, "sans-serif" !important;
+}
+
+@for $pixel from 1 through 1000 {
+  .p-t-#{$pixel} {
+    padding-top: #{$pixel}px !important;
+  }
+  .p-r-#{$pixel} {
+    padding-right: #{$pixel}px !important;
+  }
+  .p-b-#{$pixel} {
+    padding-bottom: #{$pixel}px !important;
+  }
+  .p-l-#{$pixel} {
+    padding-left: #{$pixel}px !important;
+  }
+  .p-x-#{$pixel} {
+    padding-left: #{$pixel}px !important;
+    padding-right: #{$pixel}px !important;
+  }
+  .p-y-#{$pixel} {
+    padding-top: #{$pixel}px !important;
+    padding-bottom: #{$pixel}px !important;
+  }
+  .p-a-#{$pixel} {
+    padding-top: #{$pixel}px !important;
+    padding-bottom: #{$pixel}px !important;
+    padding-left: #{$pixel}px !important;
+    padding-right: #{$pixel}px !important;
+  }
+
+  .m-t-#{$pixel} {
+    margin-top: #{$pixel}px !important;
+  }
+  .m-r-#{$pixel} {
+    margin-right: #{$pixel}px !important;
+  }
+  .m-b-#{$pixel} {
+    margin-bottom: #{$pixel}px !important;
+  }
+  .m-l-#{$pixel} {
+    margin-left: #{$pixel}px !important;
+  }
+  .m-x-#{$pixel} {
+    margin-left: #{$pixel}px !important;
+    margin-right: #{$pixel}px !important;
+  }
+  .m-y-#{$pixel} {
+    margin-top: #{$pixel}px !important;
+    margin-bottom: #{$pixel}px !important;
+  }
+  .m-a-#{$pixel} {
+    margin-top: #{$pixel}px !important;
+    margin-bottom: #{$pixel}px !important;
+    margin-left: #{$pixel}px !important;
+    margin-right: #{$pixel}px !important;
+  }
+
+  .he-#{$pixel} {
+    height: #{$pixel}px !important;
+  }
+  .min-he-#{$pixel} {
+    min-height: #{$pixel}px !important;
+  }
+  .max-he-#{$pixel} {
+    max-height: #{$pixel}px !important;
+  }
+
+  .wi-#{$pixel} {
+    width: #{$pixel}px !important;
+  }
+  .min-wi-#{$pixel} {
+    min-width: #{$pixel}px !important;
+  }
+  .max-wi-#{$pixel} {
+    max-width: #{$pixel}px !important;
+  }
+
+  .ls-#{$pixel} {
+    letter-spacing: #{$pixel}px !important;
+  }
+
+  .lh-#{$pixel} {
+    line-height: #{$pixel}px !important;
+  }
+
+  .font-#{$pixel + 1} {
+    font-size: #{$pixel + 1}px !important;
+  }
+
+  .b-r-#{$pixel} {
+    border-radius: #{$pixel}px !important;
+  }
+  .z-index-#{$pixel} {
+    z-index: #{$pixel};
+  }
+  .grid-gap-#{$pixel} {
+    gap: #{$pixel}px;
+  }
+}
+
+.main-card {
+  width: calc(100% - 424px);
+}
+
+.bg-gray {
+  background: #407ec910;
+}
+
+.grid-gap-16 {
+  gap: 16px;
+}
+
+.timeline-border {
+  border-style: dashed !important;
+  height: calc(100% - 120px);
+  top: 50px;
+}
+
+.card-shadow {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.device-home-owner{
+  border-radius: 0px 0px 10px 0px;
+}
+
+.w-fit{
+  width: fit-content;
+}
+
+.css-1aquho2-MuiTabs-indicator{
+  background-color: var(--bs-danger) !important;
+  height: 3px !important;
+}
+
+.MuiButtonBase-root{
+  font-size: 12px !important;
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+  color: black !important;
+  font-family: Inter, Helvetica, "sans-serif" !important;
+  padding: 12px 26px !important;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: block;
+}

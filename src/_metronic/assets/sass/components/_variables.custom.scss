@@ -1,0 +1,54 @@
+//
+// To make future updates easier consider overriding the global variables from _variables.bootstrap.scss and _variables.custom.scss for current demo in this file.
+// Note that this file is included first and variables defined in _variables.bootstrap.scss and _variables.custom.scss
+// are not accessible in this file but you can override any global variable as shown below:
+//
+
+// Theme colors
+// Primary
+$primary: #e70033 !default;
+$primary-active: #e70033 !default;
+$primary-light: #e70033 !default;
+$primary-inverse: #FFFFFF !default;
+
+// Secondary colors
+$secondary: #1F4573 !default;
+$secondary-active: #1F4573 !default;
+$secondary-light: #1F4573 !default;
+$secondary-inverse: #FFFFFF !default;
+
+// Light colors
+$light: #0500F1 !default;
+$light-active: #0500F1 !default;
+$light-light: #0500F1 !default;
+$light-inverse: #FFFFFF !default;
+
+// Success colors
+$success: #198754 !default;
+$success-active: #198754 !default;
+$success-light: #198754 !default;
+$success-inverse: #FFFFFF !default;
+
+// Info colors
+$info: #FF00B8 !default;
+$info-active: #FF00B8 !default;
+$info-light: #FF00B8 !default;
+$info-inverse: #FFFFFF !default;
+
+// Warning colors
+$warning: #FF8024 !default;
+$warning-active: #FF8024 !default;
+$warning-light: #FF8024 !default;
+$warning-inverse: #FFFFFF !default;
+
+// Danger colors
+$danger: #e70033 !default;
+$danger-active: #e70033 !default;
+$danger-light: #e70033 !default;
+$danger-inverse: #FFFFFF !default;
+
+// Dark colors
+$dark: #004725 !default;
+$dark-active: #004725 !default;
+$dark-light: #004725 !default;
+$dark-inverse: #FFFFFF !default;
