@@ -66,6 +66,7 @@ export function Registration() {
         // setCurrentUser(user)
       } catch (error) {
         console.error(error)
+        setCurrentUser(undefined)
         saveAuth(undefined)
         setStatus('The registration details is incorrect')
         setSubmitting(false)

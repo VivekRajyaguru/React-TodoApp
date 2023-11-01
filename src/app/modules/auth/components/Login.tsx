@@ -47,6 +47,7 @@ export function Login() {
         // setCurrentUser(user)
       } catch (error) {
         console.error(error)
+        setCurrentUser(undefined);
         saveAuth(undefined)
         setStatus('The login details are incorrect')
         setSubmitting(false)

@@ -74,6 +74,7 @@ const AuthInit: FC<WithChildren> = ({children}) => {
           //   setCurrentUser(data)
           // }
         }
+        setCurrentUser(undefined)
       } catch (error) {
         console.error(error)
         if (!didRequest.current) {
