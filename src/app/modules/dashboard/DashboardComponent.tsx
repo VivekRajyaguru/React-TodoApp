@@ -2,34 +2,59 @@ import React, {useEffect, useState} from 'react'
 import commonAPIService from '../../service/axios/axios.api.service'
 import {API} from '../../constant/constant'
 import {DashboardPage} from '../../pages/dashboard/DashboardWrapper'
-import jsonData from '../../../jsonData/dashboard.json'
-interface DashboardData {
-  // Define the structure of your data here
-}
+import {NoDataFound} from '../../pages/nodatafound/NoDataFound'
 
-const DashboardComponent: React.FC = () => {
+const DashboardComponent: React.FC<any> = ({searchBar}) => {
   const [data, setData] = useState<any>()
+  const [noDataFound, setNoDataFound] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    getDeviceData()
-  }, [])
+    if (searchBar) {
+      setIsLoading(true) // Show the loader
+      getDeviceData(searchBar)
+    }
+  }, [searchBar])
 
-  const getDeviceData = async () => {
+  const getDeviceData = async (searchBar: string) => {
     try {
       const queryParameters = {
-        serial_number: 'Q122355982',
+        serial_number: searchBar,
       }
-      // const response = await commonAPIService.get(API.DASHBOARD.GET_DEVICE, queryParameters)
-      setData(jsonData)
+      const response = await commonAPIService.get(API.DASHBOARD.GET_DEVICE, queryParameters)
+
+      // Simulate a 2-second delay before showing No Data Found or DashboardPage
+      setTimeout(() => {
+        setIsLoading(false) // Hide the loader
+
+        if (response) {
+          setData(response)
+          setNoDataFound(false) // Data found, reset noDataFound
+        } else {
+          setData(null)
+          setNoDataFound(true) // No data found
+        }
+      }, 2000)
     } catch (error) {
       console.error('Error fetching data:', error)
+      setIsLoading(false) // Hide the loader in case of an error
+      setNoDataFound(true) // Set noDataFound to true in case of an error
     }
   }
 
   return (
-    <div>
-      <DashboardPage data={data} />
-    </div>
+    <>
+      {isLoading ? (
+        // Display the loader during the 2-second delay
+        <div className='d-flex h-100 w-100 justify-content-center align-items-center b-r-20'>
+          <img src='/media/logos/rheemPreloader@2x.gif' alt='loading gif' className='b-r-20' />
+        </div>
+      ) : noDataFound ? (
+        <NoDataFound />
+      ) : (
+        <DashboardPage data={data} />
+      )}
+    </>
   )
 }
 

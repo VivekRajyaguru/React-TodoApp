@@ -1,4 +1,4 @@
-import {FC,  Suspense} from 'react'
+import {FC, Suspense, useState} from 'react'
 import {Navigate, Route, Routes} from 'react-router-dom'
 import {MasterLayout} from '../../_metronic/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
@@ -9,23 +9,12 @@ import {WithChildren} from '../../_metronic/helpers'
 
 const PrivateRoutes = () => {
   // const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
+  const [searchBar, setSearchBar] = useState()
   return (
     <Routes>
-      <Route element={<MasterLayout />}>
-        {/* Redirect to Dashboard after success login/registartion */}
-        <Route path='/' element={<Navigate to='/dashboard' />} />
-        {/* Pages */}
-        <Route path='dashboard' element={<DashboardComponent />} />
-        {/* Lazy Modules */}
-        {/* <Route
-          path='crafted/pages/profile/*'
-          element={
-            <SuspensedView>
-              <ProfilePage />
-            </SuspensedView>
-          }
-        /> */}
-        {/* Page Not Found */}
+      <Route element={<MasterLayout setSearchBar={(value) => setSearchBar(value)} />}>
+        <Route path='/' element={<Navigate to='/dashboard' state={searchBar} />} />
+        <Route path='dashboard' element={<DashboardComponent searchBar={searchBar} />} />
         <Route path='*' element={<Navigate to='/error/404' />} />
       </Route>
     </Routes>

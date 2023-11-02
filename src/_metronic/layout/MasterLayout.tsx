@@ -5,7 +5,7 @@ import {Content} from './components/Content'
 import {PageDataProvider} from './core'
 import {MenuComponent} from '../assets/ts/components'
 
-const MasterLayout = () => {
+const MasterLayout = ({setSearchBar}) => {
   const location = useLocation()
 
   useEffect(() => {
@@ -18,20 +18,20 @@ const MasterLayout = () => {
     <PageDataProvider>
       <div className='d-flex flex-column flex-root'>
         {/* begin::Page */}
-        <div className='page d-flex flex-row flex-column-fluid'>          
+        <div className='page d-flex flex-row flex-column-fluid'>
           {/* begin::Wrapper */}
           <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
-            <HeaderWrapper />
-            {/* begin::Content */}            
-              <Content>
-                <Outlet />
-              </Content>            
-            {/* end::Content */}            
+            <HeaderWrapper setSearchBar={setSearchBar} />
+            {/* begin::Content */}
+            <Content>
+              <Outlet />
+            </Content>
+            {/* end::Content */}
           </div>
           {/* end::Wrapper */}
         </div>
         {/* end::Page */}
-      </div> 
+      </div>
     </PageDataProvider>
   )
 }

@@ -3,6 +3,7 @@ import {WarrantyDetails} from '../warrantyDetails/WarrantyDetails'
 import {LocationDetails} from '../locationDetails/LocationDetails'
 import {AlarmsDetails} from '../alarmDetails/AlarmDetails'
 import {ProductDetails} from '../productDetails/ProductDetails'
+import {NoDataFound} from '../nodatafound/NoDataFound'
 
 const DashboardPage = (props: any) => {
   return (
@@ -43,7 +44,7 @@ const DashboardPage = (props: any) => {
           <TimeLine />
         </div>
       ) : (
-        ''
+        <NoDataFound />
       )}
 
       {/* end::Row  */}
